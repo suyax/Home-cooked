@@ -10,7 +10,7 @@
     "Ian Bulmer"
   ],
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   "devDependencies": {
     "browser-sync": "^1.5.7",
     "chai": "^3.4.1",
-    "clone-stats": "0.0.1",
+    "clone-stats": "0.0.1"
   },
   "dependencies": {
     "bower": "latest",
