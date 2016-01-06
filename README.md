@@ -1,6 +1,5 @@
-# Space Kitten
-
-> Pithy project description
+# Home Cooked
+> We cook fools
 
 ## Team
 
