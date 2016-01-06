@@ -1,0 +1,40 @@
+{
+  "name": "homecooked",
+  "version": "1.1.0",
+  "description": "greenfield project",
+  "author": "Richard Castro",
+  "contributors": [
+    "Richard Castro",
+    "Hahnbi Sun",
+    "Suya Xu",
+    "Ian Bulmer"
+  ],
+  "scripts": {
+    "start": "node server/server.js",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radical-chamomile/dinner-rev-OOOOO-lution"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^1.5.7",
+    "chai": "^3.4.1",
+    "clone-stats": "0.0.1",
+  },
+  "dependencies": {
+    "bower": "latest",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "jwt-simple": "^0.2.0",
+    "mongoose": "^4.1.0",
+    "morgan": "^1.1.1",
+    "q": "^1.4.1",
+    "request": "^2.36.0"
+  }
+}
