@@ -1,9 +1,9 @@
 var Meal = require('./mealModel.js');
     Q = require('q');
 
-    var findMeal = Q.denodify(Meal.findOne, Meal);
-    var createMeal = Q.denodify(Meal.create, Meal);
-    var findAllMeals = Q.denodify(Meal.find, Meal);
+    var findMeal = Q.denodeify(Meal.findOne, Meal);
+    var createMeal = Q.denodeify(Meal.create, Meal);
+    var findAllMeals = Q.denodeify(Meal.find, Meal);
 
   module.exports = {
 
@@ -23,7 +23,9 @@ var Meal = require('./mealModel.js');
         .then(function (match) {
           if (match) {
             res.send(match);
+          } else {
             return createMeal(newMeal);
+          }
         })
         .then(function (createdMeal) {
           if (createdMeal) {
@@ -34,5 +36,4 @@ var Meal = require('./mealModel.js');
           next(error);
         });
       },
-    };
 };
