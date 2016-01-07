@@ -1,0 +1,28 @@
+{
+  "name": "homecooked",
+  "description": "greenfield project",
+  "main": "",
+  "authors": [
+    "Richard Castro",
+    "Hahnbi Sun",
+    "Suya Xu",
+    "Ian Bulmer"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/hahnbi/dinner-rev-OOOOO-lution",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.8",
+    "lodash": "~3.10.1",
+    "angular-ui-router": "~0.2.15"
+  }
+}
