@@ -11,7 +11,14 @@ require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);
 
 // start listening to requests on port 8000
-app.listen(8000);
+app.listen(8000, function(err, success){
+	if(err){
+		console.log(err);
+	} else {
+		console.log('listening on port 8080');
+	}
+
+});
 
 // export our app for testing and flexibility, required by index.js
 module.exports = app;
