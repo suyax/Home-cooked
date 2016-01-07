@@ -23,6 +23,7 @@
     "jquery": "~2.1.4",
     "angular": "~1.4.8",
     "lodash": "~3.10.1",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.6"
   }
 }
