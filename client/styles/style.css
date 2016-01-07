@@ -1,0 +1,16 @@
+.fooditem {
+  border: 1px solid white;
+  height: 400px;
+  padding: 0px;
+}
+
+.fooditem-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.fooditem-image img{
+  width: 100%;
+  height: auto;
+}

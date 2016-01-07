@@ -1,21 +1,45 @@
 <!DOCTYPE html>
-<html ng-app='shortly'>
-  <head>
-    <meta charset="utf-8" />
-    <title>Home Cooked</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
-  </head>
-  <body>
-    <h1>Home Cooked</h1>
- 
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div ui-view></div>
+  <title>Homecooked</title>
 
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="styles/style.css">
 
+  <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="app/controllers/meals.js"></script>
+  <script src="app/services/services.js"></script>
+  <script src="app/app.js"></script>
+</head>
+<body ng-app="homecooked">
+  <div class="header">
+    NAVBAR : Logo | Tagline | About | Other links
+  </div>
+  <div class="container-fluid" ng-controller="MealsController as mealsCtrl">
+    <div class="search">
+      search
+    </div>
+    <div class="foodcart">
+      <div class="fooditem col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="meal in mealsCtrl.meals">
+        <div class="fooditem-image">
+          <img ng-src="{{meal.imageUrl}}">
+        </div>
+        {{meal.name}}<br>
+        {{meal.imageUrl}},<br>
+        {{meal.desc}},<br>
+        <br>User:<br>
+        {{meal.user.firstName}} {{meal.user.lastName}},<br>
+        {{meal.user.username}}
+      </div>
+    </div>
+  </div>
 
-    <script src="app/app.js"></script>
-  </body>
+</body>
 </html>
