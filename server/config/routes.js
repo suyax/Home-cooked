@@ -7,6 +7,7 @@ module.exports = function (app, express) {
   app.post('/api/users/signin', userController.signin);
   app.post('/api/users/signup', userController.signup);
 
+
   app.get('/api/meals', mealController.allMeals);
   app.post('/api/meals', mealController.newMeal);
   app.get('/api/*', mealController.allMeals);
