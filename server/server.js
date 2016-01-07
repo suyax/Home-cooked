@@ -25,7 +25,7 @@ require('./config/routes.js')(app, express);
 //   }
 // });
 
-var User = mongoose.model('User', users);
+//var User = mongoose.model('User', users);
 
 //===================================================
 // app.get('/', function(req, res){
@@ -34,18 +34,18 @@ var User = mongoose.model('User', users);
 
 
 
-//====================================================
-var Boss = new User({
-  username: 'Johnny', password: '12345'
-}); 
+// //====================================================
+// var Boss = new users({
+//   username: 'Johnny', password: '12345'
+// }); 
 
-Boss.save(function(err, data){
-	if (err){
-		console.log("oh noes an error in saving to the database: ", err);
-	} else {
-		console.log("successfully saved: ", data);
-	}
-});
+// Boss.save(function(err, data){
+// 	if (err){
+// 		console.log("oh noes an error in saving to the database: ", err);
+// 	} else {
+// 		console.log("successfully saved: ", data);
+// 	}
+// });
 //====================================================
 app.listen(8000, function(err, success){
 	if(err){
