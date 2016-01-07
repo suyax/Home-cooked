@@ -4,7 +4,7 @@ var users = require('./users/usermodel.js')
 
 var app = express();
 
-// connect to mongo database named "shortly"
+// connect to mongo database named "dinnerrev"
 mongoose.connect('mongodb://localhost/dinnerrev');
 
 // configure our server with all the middleware and routing
