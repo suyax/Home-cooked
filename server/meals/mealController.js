@@ -6,7 +6,9 @@ var createMeal = Q.nbind(Meal.create, Meal);
 var findAllMeals = Q.nbind(Meal.find, Meal);
 
   module.exports = {
+
     //returns all meals in our database as the response
+
     allMeals: function (req, res, next) {
       findAllMeals({})
         .then(function (meals) {
@@ -16,6 +18,7 @@ var findAllMeals = Q.nbind(Meal.find, Meal);
           next(error);
         });
     },
+
     //returns the meal as the response to the client
     newMeal: function (req, res, next) {
       var meal = {
@@ -38,5 +41,6 @@ var findAllMeals = Q.nbind(Meal.find, Meal);
         next(error);
       });
   }
+
 };
 
