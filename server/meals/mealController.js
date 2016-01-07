@@ -6,7 +6,7 @@ var Meal = require('./mealModel.js');
     var findAllMeals = Q.denodeify(Meal.find, Meal);
 
   module.exports = {
-
+    //return all meals as respond to client
     allMeals: function (req, res, next) {
       findAllMeals({})
         .then(function (meals) {
@@ -16,10 +16,11 @@ var Meal = require('./mealModel.js');
           next(error);
         });
     },
-
+    // if newMeal already in the system return the meal
+    //if not, create the object in db and
     newMeal: function (req, res, next) {
-      var title = req.body.title;
-      findMeal({title :title})
+      var id = req.body.id;
+      findMeal({_id:id})
         .then(function (match) {
           if (match) {
             res.send(match);
