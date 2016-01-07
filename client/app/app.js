@@ -1,9 +1,8 @@
 angular.module('homecooked', [
-  'homecooked.services',
+  // 'homecooked.services',
   'homecooked.meals',
-  'homecooked.create',
-  'homecooked.auth',
-  'ngRoute', 
+  // 'homecooked.create',
+  // 'homecooked.auth',
   'ui.router'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
@@ -15,8 +14,8 @@ angular.module('homecooked', [
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/',
-            templateUrl: 'app/auth/signin.html',
-            controller: 'AuthController',
+            templateUrl: 'app/meals/meals.html',
+            controller: 'MealsController',
         })
 
         .state('meals', {
@@ -65,12 +64,12 @@ angular.module('homecooked', [
   };
   return attach;
 })
-.run(function ($rootScope, $state, $location, Auth) {
-  $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
-    if (toState.authenticate && !Auth.isAuth()) {
-      $state.transitionTo('signin');
-      evt.preventDefault();
-      //$location.path('/signin');
-    }
-  });
-});
+// .run(function ($rootScope, $state, $location, Auth) {
+//   $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
+//     if (toState.authenticate && !Auth.isAuth()) {
+//       $state.transitionTo('signin');
+//       evt.preventDefault();
+//       //$location.path('/signin');
+//     }
+//   });
+// });
