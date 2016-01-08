@@ -18,13 +18,14 @@ mongoose.connect('mongodb://localhost/dinnerrev');
 require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);
 
+var User = mongoose.model('User', users);
 
-//====================================================
-app.listen(8000, function(err, success){
+var port = process.env.PORT || 8000;
+app.listen(port, function(err, success){
 	if(err){
 		console.log(err);
 	} else {
-		console.log('listening on port 8000');
+		console.log('listening on port' + port);
 	}
 
 });
