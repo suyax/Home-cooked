@@ -1,12 +1,12 @@
 var Meal = require('./mealModel.js');
-    Q = require('q');
+Q = require('q');
 
-    var findMeal = Q.denodeify(Meal.findOne, Meal);
-    var createMeal = Q.denodeify(Meal.create, Meal);
-    var findAllMeals = Q.denodeify(Meal.find, Meal);
+var findMeal = Q.nbind(Meal.findOne, Meal);
+var createMeal = Q.nbind(Meal.create, Meal);
+var findAllMeals = Q.nbind(Meal.find, Meal);
 
   module.exports = {
-    //return all meals as respond to client
+    //returns all meals in our database as the response
     allMeals: function (req, res, next) {
       findAllMeals({})
         .then(function (meals) {
@@ -16,25 +16,27 @@ var Meal = require('./mealModel.js');
           next(error);
         });
     },
-    // if newMeal already in the system return the meal
-    //if not, create the object in db and
+    //returns the meal as the response to the client
     newMeal: function (req, res, next) {
-      var id = req.body.id;
-      findMeal({_id:id})
-        .then(function (match) {
-          if (match) {
-            res.send(match);
-          } else {
-            return createMeal(newMeal);
-          }
-        })
-        .then(function (createdMeal) {
-          if (createdMeal) {
-            res.json(createdMeal);
-          }
-        })
-        .fail(function (error) {
-          next(error);
-        });
-      },
+      var meal = {
+        title : req.body.title,
+        picture : req.body.picture,
+        description : req.body.description,
+        date : req.body.date,
+        time : req.body.time
+      };
+      var makeMeal = function (meal) {
+        return createMeal(meal);
+      };
+      makeMeal(meal)
+      .then(function(createdMeal){
+        if (createdMeal){
+          res.json(createdMeal);
+        }
+      })
+      .fail(function(error){
+        next(error);
+      });
+  }
 };
+
