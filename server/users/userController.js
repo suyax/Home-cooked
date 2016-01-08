@@ -1,5 +1,6 @@
 var User = require('./userModel.js');
 var Q = require('q');
+var jwt = require('jwt-simple');
 
 var findUser = Q.nbind(User.findOne, User);
 var createUser = Q.nbind(User.create, User);
@@ -21,7 +22,7 @@ module.exports = {
                 var token = jwt.encode(user, 'secret');
                 res.json({token: token});
               } else {
-                return next(new Error('No user'));
+                return next(new Error('Wrong password.'));
               }
             });
         }
@@ -35,11 +36,8 @@ module.exports = {
      var username = req.body.username;
      var password = req.body.password;
     // check to see if user already exists
-    console.log(findUser({username: username}));
-        res.send(username+" "+ password)
     findUser({username: username})
       .then(function (user) {
-        console.log("getinto find User");
         if (user) {
           next(new Error('User already exist!'));
         } else {
@@ -50,14 +48,14 @@ module.exports = {
           });
         }
       })
-    //   .then(function (user) {
-    //     // create token to send back for auth
-    //     var token = jwt.encode(user, 'secret');
-    //     res.json({token: token});
-    //   })
-    //   .fail(function (error) {
-    //     next(error);
-    //   });
+      .then(function (user) {
+        // create token to send back for auth
+        var token = jwt.encode(user, 'secret');
+        res.json({token: token});
+      })
+      .fail(function (error) {
+        next(error);
+      });
   }
 
 };

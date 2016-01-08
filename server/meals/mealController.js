@@ -16,25 +16,69 @@ var Meal = require('./mealModel.js');
           next(error);
         });
     },
-    // if newMeal already in the system return the meal
-    //if not, create the object in db and
+
     newMeal: function (req, res, next) {
-      var id = req.body.id;
-      findMeal({_id:id})
-        .then(function (match) {
-          if (match) {
-            res.send(match);
-          } else {
-            return createMeal(newMeal);
-          }
-        })
-        .then(function (createdMeal) {
-          if (createdMeal) {
+      var meal = {
+        title : req.body.title,
+        picture : req.body.picture,
+        description : req.body.description,
+        date : req.body.date,
+        time : req.body.time
+       };
+          
+        // (function(){
+        //   console.log("got to the anon function");
+        //   return createMeal(meal);
+        // })()
+        // .then(function(createdMeal){
+        //   res.json(createdMeal);
+        // });
+        // console.log("created meal is: ",createdMeal);
+        // )
+        // .then(function (createdMeal) {
+        //   if (createdMeal) {
+        //     res.json(createdMeal);
+        //   }
+        // })
+        // .fail(function (error) {
+        //   next(error);
+        // });
+    /*    findMeal({title:"fake title"})
+          .then(function (meal) {
+            return createMeal({
+              title : req.body.title,
+              picture : req.body.picture,
+              description : req.body.description,
+              date : req.body.date,
+              time : req.body.time
+              });
+          })
+          .then(function (user) {
+                  // create token to send back for aut
+                  res.json(user);
+                })
+                .fail(function (error) {
+                  next(error);
+               });
+              }*/
+
+
+        function(){
+          return createMeal({
+                  title: meal.title,
+                  picture: meal.picture,
+                  description: meal.description,
+                  date: meal.date,
+                  time: meal.time
+                })
+        }()
+        .then(function(createdMeal){
+          if (createdMeal){
             res.json(createdMeal);
           }
         })
-        .fail(function (error) {
+        .fail(function(error){
           next(error);
-        });
-      },
+        });v 
 };
+

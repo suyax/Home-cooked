@@ -3,13 +3,13 @@ var userController = require('../users/userController.js');
 var helpers = require('./helpers.js');
 
 module.exports = function (app, express) {
-  //app.post('/api/users/signin', userController.signin);
-  //app.post('/api/users/signup', userController.signup);
+  app.post('/api/users/signin', userController.signin);
+  app.post('/api/users/signup', userController.signup);
   //app.get('/api/users/signedin', userController.checkAuth);
 
   // authentication middleware used to decode token and madelable on the request
-  app.get('/api/meals/', mealController.allMeals);
-  app.post('/api/meals/', mealController.newMeal);
+  app.get('/api/meals', mealController.allMeals);
+  app.post('/api/meals', mealController.newMeal);
   //handle all other route treat as a get request for all meals
   app.get('api/*', mealController.allMeals);
 
