@@ -24,32 +24,32 @@ h3 {
 h4 {
   font-size: 1.5em;
 }
+
 /* Nav bar */
 .header {
-  background-color: #ff8c00;
-  box-shadow: 0px 10px 10px -10px #222222;
+  width: 100%;
+  padding: 0px 20px;
   position: fixed;
-  top: 0;
-  z-index: 100;
+  top: 0px;
+  box-shadow: 0px 10px 6px -8px #111;
+  background-color: #ff8c00;
 }
 
 .header, .header-block {
-  width: 100%;
-  margin: 20px 0;
-  padding: 0 20px;
+  margin: 20px 0px;
   height: 50px;
+  z-index: 1000;
 }
 
 @media screen and (min-width: 600px) {
   .nav li {
-    width: 120px;
     border-bottom: none;
     height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    text-align: center;
+    vertical-align: top;
     display: inline-block;
-    margin-right: -4px;
+    margin-right: 50px;
+    font-size: 1.5em;
+    line-height: 50px;
   }
 
   .nav li a {
@@ -59,8 +59,8 @@ h4 {
 
   .nav li.home {
     font-family: Lobster, sans-serif;
-    font-size: 1.8em;
-    line-height: 50px;
+    font-size: 2.5em;
+    
   }
  
 }
@@ -216,45 +216,6 @@ h4 {
 /* All foods */
 .search {
   width: 100%;
-  background-color: #ff8c00;
-  padding: 10px;
-  box-shadow: 0px 10px 15px -6px #222222;
-}
-
-.search input {
-  height: 30px;
-  padding: 5px;
-  border: 0px;
-  border-radius: 2px;
-  width: 250px;
-}
-
-.search input:focus {
-  outline: 0px;
-}
-
-.header {
-  width: 100%;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0px;
-  box-shadow: 0px 10px 6px -8px #111;
-}
-
-.header, .header-block {
-  margin: 20px 0px;
-  height: 60px;
-  background-color: #ff8c00;
-  z-index: 1000;
-}
-
-.logo {
-  font-family: Lobster, sans-serif;
-  font-size: 30px;
-}
-
-.search {
-  width: 100%;
   height: 45px;
   background-color: #ff8c00;
   box-shadow: 0px 10px 6px -8px #111;
@@ -263,9 +224,10 @@ h4 {
 
 .search input {
   height: 25px;
+  width: 300px;
   position: relative;
   border: 2px solid #ffffff;
-  border-radius: 12px;
+  border-radius: 2px;
   padding: 0px 5px;
 }
 
@@ -275,12 +237,10 @@ h4 {
 
 .container-fluid {
   position: relative;
-  /*z-index: -1;*/
 }
 
 .fooditem {
   border: 0px solid white;
-  /*border-bottom: 5px solid white;*/
   height: 250px;
   padding: 0px;
   overflow: hidden;
@@ -334,6 +294,7 @@ h4 {
     background 0.4s ease-in,
     background-color 0.4s ease-in;
 }
+
 .fooditem-description-active {
   top: -100px;
   /*background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));*/
@@ -360,7 +321,7 @@ h4 {
 .fooditem-description h3 {
   font-family: 'Poiret One', sans-serif;
   font-size: 30px;
-  line-height: 50px;
+  line-height: 40px;
   margin: 0;
 }
 .fooditem-description h4 {

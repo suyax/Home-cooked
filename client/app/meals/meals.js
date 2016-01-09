@@ -1,6 +1,8 @@
-angular.module('homecooked.meals', [])
+angular.module('homecooked.meals', [
+  'homecooked.services'
+])
 
-.controller('MealsController', function ($element) {
+.controller('MealsController', function ($element, stubDataFactory) {
   var User = function(first, last, username) {
     this.firstName = first;
     this.lastName = last;
@@ -12,7 +14,9 @@ angular.module('homecooked.meals', [])
     this.imageUrl = image;
     this.desc = desc;
     this.user = user;
-  }
+  };
+
+  this.meals = stubDataFactory.meals;
 
   this.makeActive = function(meal) {
     meal.isActive = true;
