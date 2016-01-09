@@ -1,6 +1,13 @@
 var express = require('express');
 var mongoose = require('mongoose');
-//var users = require('./users/usermodel.js');
+var User = require('./users/userModel.js');
+var Data = require('./data/userData.js');
+var Saving = require('./data/users.js');
+console.log("========================");
+
+//populating test data to the database
+Saving.saveUsers(Data);
+
 
 var app = express();
 
@@ -21,6 +28,10 @@ app.listen(8000, function(err, success){
 	}
 
 });
+
+
+
+
 
 // export our app for testing and flexibility, required by index.js
 module.exports = app;
