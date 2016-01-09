@@ -3,6 +3,7 @@ var userController = require('../users/userController.js');
 var helpers = require('./helpers.js');
 
 module.exports = function (app, express) {
+
   //handle get and post request from client and pass them to controller
   app.post('/api/users/signin', userController.signin);
   app.post('/api/users/signup', userController.signup);
