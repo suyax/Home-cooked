@@ -8,6 +8,7 @@ $bold: 600;
 
 
 body {
+  background-color: #fffaf0;
   font-family: Dosis, sans-serif;
 }
 
@@ -22,7 +23,48 @@ h3 {
 h4 {
   font-size: 1.5em;
 }
+/* Nav bar */
+.header {
+  background-color: #ff8c00;
+  box-shadow: 0px 10px 10px -10px #222222;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
 
+.header, .header-block {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 20px;
+  height: 50px;
+}
+
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+  .nav li a {
+    padding: 0;
+    color: #fffaf0;
+  }
+
+  .nav li.home {
+    font-family: Lobster, sans-serif;
+    font-size: 1.8em;
+    line-height: 50px;
+  }
+ 
+}
+
+/*signin and signup*/
 .form {
   background-color: #13232f;
   padding: 40px;
@@ -170,6 +212,26 @@ h4 {
   text-align:right;
 }
 
+/* All foods */
+.search {
+  width: 100%;
+  background-color: #ff8c00;
+  padding: 10px;
+  box-shadow: 0px 10px 15px -6px #222222;
+}
+
+.search input {
+  height: 30px;
+  padding: 5px;
+  border: 0px;
+  border-radius: 2px;
+  width: 250px;
+}
+
+.search input:focus {
+  outline: 0px;
+}
+
 .fooditem {
   border: 0px solid white;
   height: 250px;
@@ -184,9 +246,17 @@ h4 {
   overflow: hidden;
 }
 
+.fooditem-image-active {
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));
+}
+
 .fooditem-image img{
   position: relative;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 125%;
+  max-height: 125%;
+  width: auto;
   height: auto;
   z-index: -1;
 }
@@ -199,7 +269,7 @@ h4 {
   border-top: 0px solid white;
   width: 100%;
   height: 100px;
-  padding-left: 5px;
+  padding-left: 10px;
   top: -40px;
   transition: 
     top 0.4s ease-in, 
@@ -221,7 +291,7 @@ h4 {
 .fooditem-description-active {
   top: -100px;
   /*background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0));*/
-  background-color: #ffffff;
+  background-color: #fffaf0;
   border-top: 5px solid #ff8c00;
   transition: 
     top 0.4s ease-out, 
@@ -257,32 +327,4 @@ h4 {
   color: orange;
 }
  
-@media screen and (min-width: 600px) {
-  .nav li {
-    width: 120px;
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-  }
- 
-  /* Option 1 - Display Inline */
-  .nav li {
-    display: inline-block;
-    margin-right: -4px;
-  }
- 
-  /* Options 2 - Float
-  .nav li {
-    float: left;
-  }
-  .nav ul {
-    overflow: auto;
-    width: 600px;
-    margin: 0 auto;
-  }
-  .nav {
-    background-color: #444;
-  }
-  */
-}
+

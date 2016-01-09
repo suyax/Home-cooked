@@ -14,12 +14,12 @@ angular.module('homecooked.meals', [])
     this.user = user;
   }
 
-  this.showDesc = function(meal) {
-    meal.showDesc = true;
+  this.makeActive = function(meal) {
+    meal.isActive = true;
   };
 
-  this.hideDesc = function(meal) {
-    meal.showDesc = false;
+  this.makeInactive = function(meal) {
+    meal.isActive = false;
   };
 
 
