@@ -27,6 +27,7 @@ var findAllMeals = Q.nbind(Meal.find, Meal);
         description : req.body.description,
         date : req.body.date,
         time : req.body.time
+        user : req.body.user
       };
       var makeMeal = function (meal) {
         return createMeal(meal);
