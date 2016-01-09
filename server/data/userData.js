@@ -40,6 +40,6 @@ var Hahnbi = {
   email: 'Hahnnimal@gmail.com'
 };
 
-var testData = [Ian, Suya, Richard, Hahnbi];
+var userData = [Ian, Suya, Richard, Hahnbi];
 //export our testData
-module.exports = testData;
+module.exports = userData;

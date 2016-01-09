@@ -1,13 +1,12 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var User = require('./users/userModel.js');
-var Data = require('./data/userData.js');
-var Saving = require('./data/users.js');
-console.log("========================");
+var userData = require('./data/userData.js');
+var mealData = require('./data/mealData.js');
+var Saving = require('./data/populateData.js');
 
 //populating test data to the database
-Saving.saveUsers(Data);
-
+Saving.saveUsers(userData);
+Saving.saveMeals(mealData);
 
 var app = express();
 
@@ -18,7 +17,7 @@ mongoose.connect('mongodb://localhost/dinnerrev');
 require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);
 
-var User = mongoose.model('User', users);
+//var User = mongoose.model('User', users);
 
 var port = process.env.PORT || 8000;
 app.listen(port, function(err, success){

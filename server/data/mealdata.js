@@ -5,7 +5,7 @@ var mealdata = [
     description: 'really good donuts',
     date: '2012-01-01',
     time: 'lunch',
-    user: 'ian'
+    username: 'Penguin Power'
   },
   {
     title: 'Fried chicken',
@@ -13,7 +13,7 @@ var mealdata = [
     description:'popeyes',
     date: '2015-10-01',
     time: 'dinner',
-    user: 'richard'
+    username: 'Sparkles'
   },
   {
     title: 'Pho',
@@ -21,7 +21,7 @@ var mealdata = [
     description:'beef and vegetables',
     date: '2015-10-01',
     time: 'dinner',
-    user: 'hahnbi'
+    username: 'HappyHippo'
   },
   {
     title: 'Sushi',
@@ -29,7 +29,7 @@ var mealdata = [
     description: 'sushirrito',
     date: '2015-10-11',
     time: 'lunch',
-    user: 'shafique'
+    username: 'Penguin Power'
   },
   {
     title: 'Escargot',
@@ -37,7 +37,7 @@ var mealdata = [
     description: 'yum, snails!',
     date: '2015-10-11',
     time: 'lunch',
-    user: 'spencer'
+    username: 'Sparkles'
   },
   {
     title: 'Surf and turf',
@@ -45,7 +45,7 @@ var mealdata = [
     description: 'steak and seafoods',
     date: '2015-10-12',
     time: 'lunch',
-    user: 'suya'
+    username: 'HappyHippo'
   },
   {
     title: 'Gluten-free pancake',
@@ -53,7 +53,7 @@ var mealdata = [
     description: 'bless her heart you all',
     date: '2015-10-13',
     time: 'breakfast',
-    user: 'gloria'
+    username: 'HappyHippo'
   },
   {
     title: 'Banana Nut Baked Oatmeal Cups',
@@ -61,7 +61,7 @@ var mealdata = [
     description: 'garnish with lemon',
     date: '2015-11-13',
     time: 'breakfast',
-    user: 'stella'
+    username: 'Sparkles'
   },
   {
     title: 'Make Ahead Freezer',
@@ -69,7 +69,7 @@ var mealdata = [
     description: 'country style',
     date: '2015-12-13',
     time: 'breakfast',
-    user: 'steven'
+    username: 'KINGKONG'
   },
   {
     title: 'Make Ahead Freezer',
@@ -77,7 +77,7 @@ var mealdata = [
     description: 'country style',
     date: '2015-12-13',
     time: 'breakfast',
-    user: 'steven'
+    username: 'KINGKONG'
   },
   {
     title: 'Vegetable Fried Rice',
@@ -85,7 +85,7 @@ var mealdata = [
     description: 'hawaii',
     date: '2016-01-13',
     time: 'lunch',
-    user: 'Nancy'
+    username: 'Nancy'
   }
 ];
 
