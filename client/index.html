@@ -17,12 +17,25 @@
   <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 
   <script src="app/meals/meals.js"></script>
+  <script src="app/auth/auth.js"></script>
+  <script src="app/meals/meals.js"></script>
+
   <script src="app/services/services.js"></script>
   <script src="app/app.js"></script>
 </head>
 <body ng-app="homecooked">
   <div class="header">
-    NAVBAR : Logo | Tagline | About | Other links
+    <div class="nav">
+      <ul>
+        <li class="home"><a href="#">Home</a></li>
+        <li class="tutorials"><a href="#/signin">Signin</a></li>
+        <li class="about"><a href="#/signup">Signup</a></li>
+        <li class="news"><a href="#/meals">All Meals</a></li>
+        <li class="news"><a href="#/logout">logout</a></li>
+
+      </ul>
+    </div>
+
   </div>
 
   <div ui-view></div>

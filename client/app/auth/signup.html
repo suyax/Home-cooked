@@ -1,0 +1,64 @@
+
+
+
+<div class='form' id='signup'>
+  <form name="signupForm" ng-submit='signupForm.$valid && signup()'>
+    <div class='top-row'>
+      <div class='field-wrap'>
+  		<label ng-class='{active: user.firstname, highlight: user.firstname}' for="username">First Name</label>
+       <input type="text" id="firstname" name="firstname" ng-model="user.firstname" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[a-zA-Z]+$/" required  />
+   <span ng-show="signupForm.firstname.$error.required && signupForm.firstname.$dirty">required</span>
+   <span style='color: red' ng-show="!signupForm.firstname.$error.minLength && !signupForm.firstname.$error.maxLength && signupForm.firstname.$error.pattern && signupForm.firstname.$dirty">Letters only</span>
+   <span style='color: red' ng-show="!signupForm.firstname.$error.required && (signupForm.firstname.$error.minlength || signupForm.firstname.$error.maxlength) && signupForm.firstname.$dirty">Firstname must be between 2 and 20 characters.</span>
+   <br>
+ </div>
+    <div class='field-wrap'>
+   <label ng-class='{active: user.lastname, highlight: user.lastname}' for="username">Last Name</label>
+       <input type="text" id="lastname" name="lastname" ng-model="user.lastname" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[a-zA-Z]+$/" required  />
+   <span ng-show="signupForm.lastname.$error.required && signupForm.lastname.$dirty">required</span>
+   <span style='color: red' ng-show="!signupForm.lastname.$error.minLength && !signupForm.lastname.$error.maxLength && signupForm.lastname.$error.pattern && signupForm.lastname.$dirty">Letters only</span>
+   <span style='color: red' ng-show="!signupForm.lastname.$error.required && (signupForm.lastname.$error.minlength || signupForm.lastname.$error.maxlength) && signupForm.lastname.$dirty">Lastname must be between 2 and 20 characters.</span>
+   <br>
+ </div>
+ <div class='field-wrap'>
+   <label ng-class='{active: user.username, highlight: user.username}' for="username">Username</label>
+       <input type="text" id="username" name="username" ng-model="user.username" ng-minlength="1" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required  />
+   <span ng-show="signupForm.username.$error.required && signupForm.username.$dirty">required</span>
+   <span style='color: red' ng-show="!signupForm.username.$error.minLength && !signupForm.username.$error.maxLength && signupForm.username.$error.pattern && signupForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
+   <span style='color: red' ng-show="!signupForm.username.$error.required && (signupForm.username.$error.minlength || signupForm.username.$error.maxlength) && signupForm.username.$dirty">Username ust be between 5 and 20 characters.</span>
+   <br>
+ </div>
+ <div class='field-wrap'>
+   <label ng-class='{active: user.email, highlight: user.email}' for="email">Email</label>
+       <input type="text" id="email" name="email" ng-model="user.email"  required  />
+   <span ng-show="signupForm.email.$error.required && signupForm.email.$dirty">required</span>
+   <span style='color: red' ng-show="!signupForm.email.$error.minLength && !signupForm.email.$error.maxLength && signupForm.email.$error.pattern && signupForm.email.$dirty">This is not a valid email address</span>
+   <span style='color: red' ng-show="!signupForm.email.$error.required && (signupForm.email.$error.minlength || signupForm.email.$error.maxlength) && signupForm.email.$dirty">Please enter a valid email address</span>
+   <br>
+ </div>
+ <div class='field-wrap'>
+   <label ng-class='{active: user.password, highlight: user.password}' for="password">Password</label>
+    <input type="password" id="password" name="password" ng-model="user.password" ng-minlength="8" ng-maxlength="20" required  />
+   <span ng-show="signupForm.password.$error.required && signupForm.password.$dirty">required</span>
+   <span style='color: red' ng-show="!signupForm.password.$error.required && (signupForm.password.$error.minlength || signupForm.password.$error.maxlength) && signupForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+   <br>
+ </div>
+ <div class='field-wrap'>
+    <label ng-class='{active: user.address, highlight: user.address}' for="address">Address</label>
+       <input type="text" id="address" name="address" ng-model="user.address" ng-minlength="1" ng-maxlength="50" required  />
+   <span ng-show="signupForm.address.$error.required && signupForm.address.$dirty">required</span>
+   <span style='color: red' ng-show="!signupForm.address.$error.required && (signupForm.address.$error.minlength || signupForm.address.$error.maxlength) && signupForm.address.$dirty">That is not a valid address.</span>
+   <br>
+ </div>
+ <div class='field-wrap'>
+    <label ng-class='{active: user.phonenum, highlight: user.phonenum}' for="phonenum">Phone Number</label>
+       <input type="text" id="phonenum" name="phonenum" ng-model="user.phonenum" ng-minlength="1" ng-maxlength="10" ng-pattern="/^\d+$/" required  />
+   <span ng-show="signupForm.phonenum.$error.required && signupForm.phonenum.$dirty">required</span>
+   <span style='color: red' ng-show="signupForm.phonenum.$error.pattern && signupForm.phonenum.$dirty">Numbers only</span>
+   <span style='color: red' ng-show="!signupForm.phonenum.$error.required && (signupForm.phonenum.$error.minlength || signupForm.phonenum.$error.maxlength) && signupForm.phonenum.$dirty">Phone number must be 10 digits, including the area code</span>
+   <br>
+ </div>
+    <button class='button button-block'>signup</button>
+  </form>
+  <div style='color: red'ng-show='alreadyExists'>That username already exists. Please choose a different username</div>
+</div>
