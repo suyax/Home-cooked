@@ -2,7 +2,7 @@ angular.module('homecooked', [
   // 'homecooked.services',
   'homecooked.meals',
   // 'homecooked.create',
-  // 'homecooked.auth',
+  'homecooked.auth',
   'ui.router'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
@@ -64,12 +64,12 @@ angular.module('homecooked', [
   };
   return attach;
 })
-// .run(function ($rootScope, $state, $location, Auth) {
-//   $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
-//     if (toState.authenticate && !Auth.isAuth()) {
-//       $state.transitionTo('signin');
-//       evt.preventDefault();
-//       //$location.path('/signin');
-//     }
-//   });
-// });
+.run(function ($rootScope, $state, $location) {
+  $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
+    if (toState.authenticate) {
+      $state.transitionTo('signin');
+      evt.preventDefault();
+      //$location.path('/signin');
+    }
+  });
+});
