@@ -3,13 +3,14 @@ var mongoose = require('mongoose');
 var userData = require('./data/userData.js');
 var mealData = require('./data/mealData.js');
 var Saving = require('./data/populateData.js');
+var
 
 //populating test data to the database
 Saving.saveUsers(userData);
 Saving.saveMeals(mealData);
 
 var app = express();
-var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL;
+var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL || 'mongodb://locahost/api';
 // connect to mongo database named "dinnerrev"
 mongoose.connect(db);
 
