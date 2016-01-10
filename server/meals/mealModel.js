@@ -5,7 +5,8 @@ var MealSchema = new mongoose.Schema({
  picture: String,
  description: String,
  date: String,
- time: String
+ time: String,
+ user: String,
 });
 
 module.exports = mongoose.model('Meal', MealSchema);
