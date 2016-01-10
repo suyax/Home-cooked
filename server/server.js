@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var userData = require('./data/userData.js');
 var mealData = require('./data/mealData.js');
 var Saving = require('./data/populateData.js');
-var
 
 //populating test data to the database
 Saving.saveUsers(userData);
