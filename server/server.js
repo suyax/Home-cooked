@@ -9,9 +9,9 @@ Saving.saveUsers(userData);
 Saving.saveMeals(mealData);
 
 var app = express();
-
+var db = process.env.MONGOLAB_URI||process.envMONGOHQ_URL;
 // connect to mongo database named "dinnerrev"
-mongoose.connect('mongodb://localhost/dinnerrev');
+mongoose.connect(db||'mongodb://localhost/dinnerrev');
 
 // configure our server with all the middleware and routing
 require('./config/middleware.js')(app, express);
