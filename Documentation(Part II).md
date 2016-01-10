@@ -70,7 +70,7 @@ Back-End/Server & Database
         });
         ```
 
-  * mealController.js:
+    * mealController.js:
         control db to create new Meal and respond query with all meals
         handle data between database and user model
 
@@ -84,7 +84,7 @@ Back-End/Server & Database
               next(error);
             });
         },
-    ```
+        ```
 
 * server/config module: /server/config/
 
