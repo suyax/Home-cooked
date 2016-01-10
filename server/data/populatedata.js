@@ -1,25 +1,27 @@
+/*methods to populate data into database*/
 
+//require dependencies
 var mongoose = require('mongoose');
 var User = require('../users/userModel.js');
 var Meal = require('../meals/mealModel.js');
 
 var createUser = function(obj){
   return new User ({
-	  username: obj.username,
-	  firstName: obj.firstName,
-	  lastName: obj.lastName,
-	  password: obj.password,
-	  address: obj.address,
-	  phone: obj.phone,
-	  email: obj.email
+    username: obj.username,
+    firstName: obj.firstName,
+    lastName: obj.lastName,
+    password: obj.password,
+    address: obj.address,
+    phone: obj.phone,
+    email: obj.email
   });
 };
 
 var saveUsers= function(array){
-	for (var i = 0; i < array.length; i++){
-		var user = createUser(array[i]);
-		user.save(function(err){});
-	};
+  for (var i = 0; i < array.length; i++){
+    var user = createUser(array[i]);
+    user.save(function(err){});
+  };
 };
 
 

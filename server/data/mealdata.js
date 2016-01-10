@@ -1,3 +1,5 @@
+/*populates database with meal data*/
+
 var mealdata = [
   {
     tittle: 'Donuts',
@@ -90,5 +92,3 @@ var mealdata = [
 ];
 
 module.exports = mealdata;
-
-

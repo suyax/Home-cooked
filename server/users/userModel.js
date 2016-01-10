@@ -1,10 +1,17 @@
+/*define user schema and methods
+define hash salt password process*/
+
+//require dependencies
 var Q = require('q');
 var mongoose=require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
+
+//setup salt factor
 var SALT_WORK_FACTOR = 10;
 
+//define user schema
 var UserSchema = new mongoose.Schema({
-  
+
   username: {
     type: String,
     required: true,
@@ -24,7 +31,7 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }, 
+  },
 
   address: {
     type: String,
@@ -42,10 +49,11 @@ var UserSchema = new mongoose.Schema({
     unique: true
   },
 
-  
   salt: String
 });
 
+//define compare passwords method on user schema: input is candidate's password
+//compare whether input is match with saved password
 UserSchema.methods.comparePasswords = function (candidatePassword) {
   var savedPassword = this.password;
   return Q.Promise(function (resolve, reject) {
@@ -59,6 +67,7 @@ UserSchema.methods.comparePasswords = function (candidatePassword) {
   });
 };
 
+//before save the schema do following procedures:
 UserSchema.pre('save', function (next) {
   var user = this;
 
