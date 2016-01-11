@@ -5,15 +5,15 @@ connect sever with mongodb*/
 var express = require('express');
 var mongoose = require('mongoose');
 var userData = require('./data/userData.js');
-var mealData = require('./data/mealData.js');
-var Saving = require('./data/populateData.js');
+var mealData = require('./data/mealdata.js');
+var Saving = require('./data/populatedata.js');
 
 //populating test data to the database
 Saving.saveUsers(userData);
 Saving.saveMeals(mealData);
 
 var app = express();
-var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL || 'mongodb://locahost/api';
+var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL || 'mongodb://localhost/api';
 // connect to mongo database named "dinnerrev"
 mongoose.connect(db);
 
