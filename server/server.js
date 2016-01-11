@@ -5,7 +5,7 @@ connect sever with mongodb*/
 var express = require('express');
 var mongoose = require('mongoose');
 var userData = require('./data/userData.js');
-var mealData = require('./data/mealData.js');
+var mealData = require('./data/mealdata.js');
 var Saving = require('./data/populateData.js');
 
 //populating test data to the database
