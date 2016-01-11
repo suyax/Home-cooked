@@ -11,9 +11,5 @@ module.exports = function (app, express) {
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../../client'));
-<<<<<<< HEAD
 };
-=======
-  //         ../../client
-};
->>>>>>> 81dd48efaa8422e64f94498abb28d999d4aa9dfe
+
