@@ -2,21 +2,9 @@ angular.module('homecooked.meals', [
   'homecooked.services'
 ])
 
-.controller('MealsController', function ($element, stubDataFactory) {
-  var User = function(first, last, username) {
-    this.firstName = first;
-    this.lastName = last;
-    this.username = username;
-  };
-
-  var Meal = function(name, image, desc, user) {
-    this.name = name;
-    this.imageUrl = image;
-    this.desc = desc;
-    this.user = user;
-  };
-
-  this.meals = stubDataFactory.meals;
+.controller('MealsController', function (Meals) {
+  // this.meals = stubDataFactory.meals;
+  var me = this;
 
   this.makeActive = function(meal) {
     meal.isActive = true;
@@ -25,4 +13,20 @@ angular.module('homecooked.meals', [
   this.makeInactive = function(meal) {
     meal.isActive = false;
   };
-});
+
+  this.initialize = function() {
+    this.getMeals();
+  };
+
+  this.getMeals = function() {
+    return Meals.getAll().then(function (resp) {
+      me.meals = resp.data;
+      return resp.data;
+    });
+  };
+})
+
+.controller('CookController', function (Meals) {
+  var me = this;
+
+})

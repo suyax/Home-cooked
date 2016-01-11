@@ -1,4 +1,4 @@
-/*control user singin and singup
+/*control user signin and signup
 handle data between database and user model*/
 
 //require dependencies
@@ -48,7 +48,6 @@ module.exports = {
      var phone = req.body.phone;
      var email = req.body.email;
 
-
     // check to see if user already exists
     findUser({username: username})
       .then(function (user) {
@@ -58,9 +57,9 @@ module.exports = {
           // make a new user if not one
           return createUser({
             username: username,
+            password: password,
             firstName: firstName,
             lastName: lastName,
-            password: password,
             address: address,
             phone: phone,
             email: email

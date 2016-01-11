@@ -37,10 +37,10 @@ angular.module('homecooked', [
             controller: 'AuthController'
         })
 
-        .state('submit', {
-            url: '/submit',
-            templateUrl: 'app/submit/submit.html',
-            controller: 'SubmitController',
+        .state('cook', {
+            url: '/cook',
+            templateUrl: 'app/meals/create.html',
+            controller: 'CookController',
             authenticate: true
         })
 
@@ -54,7 +54,7 @@ angular.module('homecooked', [
 .factory('AttachTokens', function ($window) {
   var attach = {
     request: function (object) {
-      var jwt = $window.localStorage.getItem('com.shortly');
+      var jwt = $window.localStorage.getItem('home.cooked');
       if (jwt) {
         object.headers['x-access-token'] = jwt;
       }
@@ -64,9 +64,9 @@ angular.module('homecooked', [
   };
   return attach;
 })
-.run(function ($rootScope, $state, $location) {
+.run(function ($rootScope, $state, $location, Auth) {
   $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
-    if (toState.authenticate) {
+    if (toState.authenticate && !Auth.isAuth()) {
       $state.transitionTo('signin');
       evt.preventDefault();
       //$location.path('/signin');

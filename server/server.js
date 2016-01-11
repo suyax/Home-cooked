@@ -4,11 +4,12 @@ connect sever with mongodb*/
 //require dependencies
 var express = require('express');
 var mongoose = require('mongoose');
+
+//populating test data to the database
 var userData = require('./data/userData.js');
 var mealData = require('./data/mealdata.js');
 var Saving = require('./data/populatedata.js');
 
-//populating test data to the database
 Saving.saveUsers(userData);
 Saving.saveMeals(mealData);
 
@@ -32,7 +33,6 @@ app.listen(port, function(err, success){
   }
 
 });
-
 
 // export our app for testing and flexibility, required by index.js
 module.exports = app;

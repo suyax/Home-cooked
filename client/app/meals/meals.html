@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="MealsController as mealsCtrl">
+<div class="container-fluid" ng-controller="MealsController as mealsCtrl" ng-init="mealsCtrl.initialize()">
   <div class="search">
     <form>
       <input name="search" type="text" ng-model="mealsCtrl.search" placeholder="Search for dishes..."></input>
@@ -7,12 +7,11 @@
   <div class="foodcart">
     <div class="fooditem col-lg-3 col-md-3 col-sm-4 col-xs-6" ng-repeat="meal in mealsCtrl.meals | filter : {name : mealsCtrl.search}" ng-mouseenter="mealsCtrl.makeActive(meal)" ng-mouseleave="mealsCtrl.makeInactive(meal)">
       <div class="fooditem-image" ng-class="{'fooditem-image-active': meal.isActive}">
-        <img ng-src="{{meal.imageUrl}}">
+        <img ng-src="{{meal.picture}}">
       </div>
       <div class="fooditem-description" ng-class="{'fooditem-description-active': meal.isActive}">
-        <h3>{{meal.name}}</h3>
-        <h4>{{meal.desc}}</h4>
-        
+        <h3>{{meal.title}}</h3>
+        <h4>{{meal.description}}</h4>
       </div>
     </div>
   </div>

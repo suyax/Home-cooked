@@ -2,7 +2,7 @@
 
 var mealdata = [
   {
-    tittle: 'Donuts',
+    title: 'Donuts',
     picture: 'https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/468440_10151707673673783_908365501_o.jpg',
     description: 'really good donuts',
     date: '2012-01-01',

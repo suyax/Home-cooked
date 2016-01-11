@@ -95,3 +95,24 @@ angular.module('homecooked.services', [])
     meals: meals
   };
 })
+
+.factory('Meals', function ($http) {
+  var getAll = function (callback) {
+    return $http({
+      method: 'GET',
+      url: '/api/meals'
+    });
+  };
+
+  var addOne = function (callback) {
+    return $http({
+      method: 'POST',
+      url: '/api/meals'
+    });
+  }
+
+  return {
+    getAll: getAll,
+    addOne: addOne
+  }
+}) 

@@ -3,27 +3,25 @@
 // in our signup/signin forms using the injected Auth service
 angular.module('homecooked.auth', [])
 
-.controller('AuthController', function ($scope, $location, $window) {
+.controller('AuthController', function ($scope, $location, $window, Auth) {
   $scope.user = {};
 
-
-
-
   $scope.signup = function () {
-  	Auth.signup().then(function afterSignup(token){
+  	Auth.signup($scope.user).then(function afterSignup(token){
   		$window.localStorage.setItem('home.cooked', token);
-        $location.path('/meals');
+      $window.localStorage.setItem('home.cooked.user', $scope.user.username);
+      $location.path('/meals');
   	})
   };
   $scope.signin = function () {
-  	Auth.signin().then(function afterSignin(token){
+  	Auth.signin($scope.user).then(function afterSignin(token){
   		$window.localStorage.setItem('home.cooked', token);
-        $location.path('/meals');
-  	})
+      $window.localStorage.setItem('home.cooked.user', $scope.user.username);
+      $location.path('/meals');
+  	});
   };
-  if($location.$$path === '/logout'){
-      $window.localStorage.setItem('home.cooked', '');
-      $location.path('/signin');
-    }
+  if ($location.$$path === '/logout'){
+    Auth.signout();
+  }
   
 });
