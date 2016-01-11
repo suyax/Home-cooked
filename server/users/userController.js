@@ -44,18 +44,10 @@ module.exports = {
      var firstName = req.body.firstName;
      var lastName = req.body.lastName;
      var password = req.body.password;
-<<<<<<< HEAD
-
-     var firstname = req.body.firstname;
-     var lastname = req.body.lastname;
      var address = req.body.address;
      var phone = req.body.phone;
      var email = req.body.email;
-=======
-     var address = req.body.lastName;
-     var phone = req.body.phone;
-     var email = req.body.email
->>>>>>> 81dd48efaa8422e64f94498abb28d999d4aa9dfe
+
 
     // check to see if user already exists
     findUser({username: username})
