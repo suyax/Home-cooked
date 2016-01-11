@@ -7,18 +7,18 @@ Back-End/Server & Database
 
     * Connects to MongoDB.
 
-    * Populates original data into database as well
-
         ```
         var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL ||
           'mongodb://locahost/api';
         mongoose.connect(db);
         ```
+    * Populates original data into database as well
+
 
 * server/users module: /server/users/
 
     * userModel.js:
-        user schema and methods can be found and modified here.
+        The user schema and methods can be found here.
 
         ```
         username: {
@@ -29,8 +29,8 @@ Back-End/Server & Database
         ```
 
     * userController.js:
-        control user singin and singup
-        handle data between database and user model
+        controls user sign-in and sign-up
+        takes sign up and log in data from the client and saves it to the database
 
         ```
         findUser({username: username})
@@ -57,7 +57,7 @@ Back-End/Server & Database
 
 * server/meals module: /server/meals/
 
-    * mealModel.js: meal schema and methods can be found and modified here.
+    * mealModel.js: The meal schema and methods can be found here.
 
         ```
         var MealSchema = new mongoose.Schema({
@@ -71,8 +71,9 @@ Back-End/Server & Database
         ```
 
     * mealController.js:
-        control db to create new Meal and respond query with all meals
-        handle data between database and user model
+        Controls the flow of data between the user interface, the server, and the database
+
+        *Responds to client get requests for all meals, providing the data in JSON form
 
         ```
         allMeals: function (req, res, next) {
@@ -88,7 +89,7 @@ Back-End/Server & Database
 
 * server/config module: /server/config/
 
-    * helpers.js: contains functions for err handling and decode token
+    * helpers.js: contains functions for error handling and decoding tokens
 
         ```
         errorHandler: function (error, req, res, next) {
@@ -98,23 +99,23 @@ Back-End/Server & Database
         },
         ```
 
-    * middleware.js: provide middlewares for log err and parse request
+    * middleware.js: provides middleware for logging errors and parsing requests
 
         ```
         app.use(bodyParser.urlencoded({extended: true}));
         ```
-    * routes.js: routes to handle every restful API requests from client side.
+    * routes.js: routes to handle every restful API request from the client side.
         ```
         app.post('/api/users/signin', userController.signin);
         ```
 
 * server/data module: /server/data/
 
-    * mealData.js: contains array of meal data object
+    * mealData.js: contains an array of meal data objects
 
-    * userData.js: contains array of user data object
+    * userData.js: contains an array of user data objects
 
-    * populateData.js: methods to populate data into database
+    * populateData.js: contains methods to populate the data into the database.
 
         ```
         var createUser = function(obj){
