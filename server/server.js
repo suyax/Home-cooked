@@ -4,7 +4,7 @@ connect sever with mongodb*/
 //require dependencies
 var express = require('express');
 var mongoose = require('mongoose');
-var userData = require('./data/userdata.js');
+var userData = require('./data/userData.js');
 var mealData = require('./data/mealdata.js');
 var Saving = require('./data/populatedata.js');
 
