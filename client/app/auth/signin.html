@@ -20,5 +20,10 @@
 
     <button class='button button-block'>SIGNIN</button>
   </form>
-  <div style='color: red'ng-show='alreadyExists'>That username already exists. Please choose a different username</div>
+   <div style='color: red'ng-hide='validUser'>That is an invalid username/password combination. You have {{tries}} attempts remaining</div>
+</div>
+<div id='lockscreen' ng-hide='lockedOut'>
+  <img src='https://media.giphy.com/media/OJGBgzkAlwM80/giphy.gif'>
+</div>
+
 </div>
