@@ -13,7 +13,7 @@ Saving.saveUsers(userData);
 Saving.saveMeals(mealData);
 
 var app = express();
-var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL || 'mongodb://locahost/api';
+var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL || 'mongodb://localhost/api';
 // connect to mongo database named "dinnerrev"
 mongoose.connect(db);
 

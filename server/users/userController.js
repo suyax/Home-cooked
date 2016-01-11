@@ -58,8 +58,8 @@ module.exports = {
           // make a new user if not one
           return createUser({
             username: username,
-            firstName = firstName,
-            lastName = lastName,
+            firstName: firstName,
+            lastName: lastName,
             password: password,
             address: address,
             phone: phone,
