@@ -53,7 +53,12 @@ h4 {
 
   .nav li a {
     padding: 0 20px;
-    color: #fffaf0;
+    color: #ffffff;
+  }
+
+  .nav li a:hover {
+    background-color: #ffffff;
+    color: #ff8c00;
   }
 
   .nav li.home {
@@ -66,19 +71,20 @@ h4 {
 
 /*signin and signup*/
 .form {
-  background-color: white;
+  background-color: #ffffff;
   padding: 40px;
   max-width:600px;
   margin:40px auto;
-  border-radius:10px;
-  box-shadow:0 4px 10px 4px rgba(#111111,.3);
+  border-radius:5px;
+  box-shadow: 0px 10px 12px -8px #111;
 }
 
 .form label {
   position:absolute;
   transform:translateY(6px);
   left:13px;
-  color:black;
+  color:#999999;
+  font-weight: normal;
   transition:all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
@@ -103,6 +109,7 @@ h4 {
 }
 
 .form input, .form textarea {
+  border: 1px solid #a0b3b0;
   font-size:22px;
   display:block;
   width:100%;
@@ -110,8 +117,7 @@ h4 {
   padding:5px 10px;
   background:none;
   background-image:none;
-  border:1px solid #a0b3bo;
-  color:#ffffff;
+  color:#333333;
   border-radius:0;
   transition:border-color .25s ease, box-shadow .25s ease;
   &:focus {
@@ -160,7 +166,7 @@ h4 {
   color:#ffffff;
   transition:all.5s ease;
   -webkit-appearance: none;
-  &:hover, &:focus {
+  &`, &:focus {
     background:#1ab188;
   }
 }
