@@ -2,7 +2,7 @@
   <form name="signupForm" ng-submit='signupForm.$valid && signup()'>
     <div class='top-row'>
       <div class='field-wrap'>
-  		<label ng-class='{active: signupForm.firstname.$dirty, highlight: signupForm.firstname.$dirty}' for="username">First Name</label>
+  		<label ng-class='{active: signupForm.firstname.$dirty, highlight: signupForm.firstname.$dirty}' for="firstname">First Name</label>
        <input type="text" id="firstname" name="firstname" ng-model="user.firstName" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[a-zA-Z]+$/" required  />
    <span ng-show="signupForm.firstname.$error.required && signupForm.firstname.$dirty">required</span>
    <span style='color: red' ng-show="!signupForm.firstname.$error.minLength && !signupForm.firstname.$error.maxLength && signupForm.firstname.$error.pattern && signupForm.firstname.$dirty">Letters only</span>
@@ -10,7 +10,7 @@
    <br>
  </div>
     <div class='field-wrap'>
-   <label ng-class='{active: signupForm.lastname.$dirty, highlight: signupForm.lastname.$dirty}' for="username">Last Name</label>
+   <label ng-class='{active: signupForm.lastname.$dirty, highlight: signupForm.lastname.$dirty}' for="lastname">Last Name</label>
        <input type="text" id="lastname" name="lastname" ng-model="user.lastName" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[a-zA-Z]+$/" required  />
    <span ng-show="signupForm.lastname.$error.required && signupForm.lastname.$dirty">required</span>
    <span style='color: red' ng-show="!signupForm.lastname.$error.minLength && !signupForm.lastname.$error.maxLength && signupForm.lastname.$error.pattern && signupForm.lastname.$dirty">Letters only</span>
@@ -22,7 +22,7 @@
        <input type="text" id="username" name="username" ng-model="user.username" ng-minlength="1" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required  />
    <span ng-show="signupForm.username.$error.required && signupForm.username.$dirty">required</span>
    <span style='color: red' ng-show="!signupForm.username.$error.minLength && !signupForm.username.$error.maxLength && signupForm.username.$error.pattern && signupForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
-   <span style='color: red' ng-show="!signupForm.username.$error.required && (signupForm.username.$error.minlength || signupForm.username.$error.maxlength) && signupForm.username.$dirty">Username ust be between 5 and 20 characters.</span>
+   <span style='color: red' ng-show="!signupForm.username.$error.required && (signupForm.username.$error.minlength || signupForm.username.$error.maxlength) && signupForm.username.$dirty">Username must be between 5 and 20 characters.</span>
    <br>
  </div>
  <div class='field-wrap'>

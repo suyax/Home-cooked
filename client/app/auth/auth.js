@@ -23,5 +23,4 @@ angular.module('homecooked.auth', [])
   if ($location.$$path === '/logout'){
     Auth.signout();
   }
-  
 });

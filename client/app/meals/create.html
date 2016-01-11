@@ -1,61 +1,39 @@
 <div class='form' id='create'>
-  <form name="createForm" ng-submit='createForm.$valid && signup()'>
+  <form name="createForm" ng-submit='createForm.$valid && submitHandler()'>
     <div class='top-row'>
       <div class='field-wrap'>
-  		<label ng-class='{active: createForm.firstname.$dirty, highlight: createForm.firstname.$dirty}' for="username">First Name</label>
-       <input type="text" id="firstname" name="firstname" ng-model="user.firstname" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[a-zA-Z]+$/" required  />
-   <span ng-show="createForm.firstname.$error.required && createForm.firstname.$dirty">required</span>
-   <span style='color: red' ng-show="!createForm.firstname.$error.minLength && !createForm.firstname.$error.maxLength && createForm.firstname.$error.pattern && createForm.firstname.$dirty">Letters only</span>
-   <span style='color: red' ng-show="!createForm.firstname.$error.required && (createForm.firstname.$error.minlength || createForm.firstname.$error.maxlength) && createForm.firstname.$dirty">Firstname must be between 2 and 20 characters.</span>
-   <br>
- </div>
-    <div class='field-wrap'>
-   <label ng-class='{active: createForm.lastname.$dirty, highlight: createForm.lastname.$dirty}' for="username">Last Name</label>
-       <input type="text" id="lastname" name="lastname" ng-model="user.lastname" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[a-zA-Z]+$/" required  />
-   <span ng-show="createForm.lastname.$error.required && createForm.lastname.$dirty">required</span>
-   <span style='color: red' ng-show="!createForm.lastname.$error.minLength && !createForm.lastname.$error.maxLength && createForm.lastname.$error.pattern && createForm.lastname.$dirty">Letters only</span>
-   <span style='color: red' ng-show="!createForm.lastname.$error.required && (createForm.lastname.$error.minlength || createForm.lastname.$error.maxlength) && createForm.lastname.$dirty">Lastname must be between 2 and 20 characters.</span>
-   <br>
- </div>
- <div class='field-wrap'>
-   <label ng-class='{active: createForm.username.$dirty, highlight: createForm.username.$dirty}' for="username">Username</label>
-       <input type="text" id="username" name="username" ng-model="user.username" ng-minlength="1" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required  />
-   <span ng-show="createForm.username.$error.required && createForm.username.$dirty">required</span>
-   <span style='color: red' ng-show="!createForm.username.$error.minLength && !createForm.username.$error.maxLength && createForm.username.$error.pattern && createForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
-   <span style='color: red' ng-show="!createForm.username.$error.required && (createForm.username.$error.minlength || createForm.username.$error.maxlength) && createForm.username.$dirty">Username ust be between 5 and 20 characters.</span>
-   <br>
- </div>
- <div class='field-wrap'>
-   <label ng-class='{active: createForm.email.$dirty, highlight: createForm.email.$dirty}' for="email">Email</label>
-       <input type="email" id="email" name="email" ng-model="user.email"  required  />
-   <span ng-show="createForm.email.$error.required && createForm.email.$dirty">required</span>
-   <span style='color: red' ng-show="!createForm.email.$error.minLength && !createForm.email.$error.maxLength && createForm.email.$error.pattern && createForm.email.$dirty">This is not a valid email address</span>
-   <span style='color: red' ng-show="!createForm.email.$error.required && (createForm.email.$error.minlength || createForm.email.$error.maxlength) && createForm.email.$dirty">Please enter a valid email address</span>
-   <br>
- </div>
- <div class='field-wrap'>
-   <label ng-class='{active: createForm.password.$dirty, highlight: createForm.password.$dirty}' for="password">Password</label>
-    <input type="password" id="password" name="password" ng-model="user.password" ng-minlength="8" ng-maxlength="20" required  />
-   <span ng-show="createForm.password.$error.required && createForm.password.$dirty">required</span>
-   <span style='color: red' ng-show="!createForm.password.$error.required && (createForm.password.$error.minlength || createForm.password.$error.maxlength) && createForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
-   <br>
- </div>
- <div class='field-wrap'>
-    <label ng-class='{active: createForm.address.$dirty, highlight: createForm.address.$dirty}' for="address">Address</label>
-       <input type="text" id="address" name="address" ng-model="user.address" ng-minlength="1" ng-maxlength="50" required  />
-   <span ng-show="createForm.address.$error.required && createForm.address.$dirty">required</span>
-   <span style='color: red' ng-show="!createForm.address.$error.required && (createForm.address.$error.minlength || createForm.address.$error.maxlength) && createForm.address.$dirty">That is not a valid address.</span>
-   <br>
- </div>
- <div class='field-wrap'>
-    <label ng-class='{active: createForm.phonenum.$dirty, highlight: createForm.phonenum.$dirty}' for="phonenum">Phone Number</label>
-       <input type="text" id="phonenum" name="phonenum" ng-model="user.phonenum" ng-minlength="10" ng-maxlength="10" ng-pattern="/^\d+$/" required  />
-   <span ng-show="createForm.phonenum.$error.required && createForm.phonenum.$dirty">required</span>
-   <span style='color: red' ng-show="createForm.phonenum.$error.pattern && createForm.phonenum.$dirty">Numbers only</span>
-   <span style='color: red' ng-show="!createForm.phonenum.$error.required && (createForm.phonenum.$error.minlength || createForm.phonenum.$error.maxlength) && createForm.phonenum.$dirty">Phone number must be 10 digits, including the area code</span>
-   <br>
- </div>
+        <label ng-class='{active: createForm.title.$dirty, highlight: createForm.title.$dirty}' for="title">Title</label>
+        <input type="text" id="title" name="title" ng-model="meal.title" ng-minlength="1" ng-maxlength="40" required  />
+        <span style='color: red' ng-show="!createForm.title.$error.required && (createForm.title.$error.minlength || createForm.title.$error.maxlength) && createForm.title.$dirty">Must be less than 40 characters.</span>
+       <br>
+      </div>
+      <div class='field-wrap'>
+        <label ng-class='{active: createForm.description.$dirty, highlight: createForm.description.$dirty}' for="description">Description</label>
+        <input type="text" id="description" name="description" ng-model="meal.description" ng-minlength="1" ng-maxlength="200" required  />
+        <span style='color: red' ng-show="!createForm.description.$error.required && (createForm.description.$error.minlength || createForm.description.$error.maxlength) && createForm.description.$dirty">Must be less than 200 characters.</span>
+       <br>
+      </div>
+      <div class='field-wrap'>
+        <label ng-class='{active: createForm.picture.$dirty, highlight: createForm.picture.$dirty}' for="picture">Image URL</label>
+        <input type="text" id="picture" name="picture" ng-model="meal.picture" ng-minlength="1" ng-maxlength="200" required  />
+        <span style='color: red' ng-show="!createForm.picture.$error.required && (createForm.picture.$error.minlength || createForm.picture.$error.maxlength) && createForm.picture.$dirty">Must be less than 200 characters.</span>
+       <br>
+      </div>
+      <div class='field-wrap'>
+        <label ng-class='{active: createForm.date.$dirty, highlight: createForm.date.$dirty}' for="date">Date</label>
+        <input type="text" id="date" name="date" ng-model="meal.date" ng-minlength="1" ng-maxlength="15" required  />
+        <span style='color: red' ng-show="!createForm.date.$error.minLength && !createForm.date.$error.maxLength && createForm.date.$error.pattern && createForm.date.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
+        <span style='color: red' ng-show="!createForm.date.$error.required && (createForm.date.$error.minlength || createForm.date.$error.maxlength) && createForm.date.$dirty">Must be less than 15 characters.</span>
+       <br>
+      </div>
+      <div class='field-wrap'>
+        <label ng-class='{active: createForm.time.$dirty, highlight: createForm.time.$dirty}' for="time">Time</label>
+        <input type="text" id="time" name="time" ng-model="meal.time" ng-minlength="1" ng-maxlength="15" required  />
+        <span style='color: red' ng-show="!createForm.time.$error.minLength && !createForm.time.$error.maxLength && createForm.time.$error.pattern && createForm.time.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
+        <span style='color: red' ng-show="!createForm.time.$error.required && (createForm.time.$error.minlength || createForm.time.$error.maxlength) && createForm.time.$dirty">Must be less than 15 characters.</span>
+       <br>
+      </div>
+    </div>
     <button class='button button-block'>signup</button>
   </form>
-  <div style='color: red'ng-show='alreadyExists'>That username already exists. Please choose a different username</div>
 </div>

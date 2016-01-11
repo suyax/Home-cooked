@@ -51,8 +51,9 @@ h4 {
     line-height: 50px;
   }
 
-  .nav li a {
+  .nav li a, .nav li a:active, .nav li a:focus {
     padding: 0 20px;
+    background-color: #ff8c00;
     color: #ffffff;
   }
 

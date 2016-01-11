@@ -26,7 +26,15 @@ angular.module('homecooked.meals', [
   };
 })
 
-.controller('CookController', function (Meals) {
+.controller('CookController', function ($scope, $location, Meals) {
   var me = this;
+
+  $scope.meal = {};
+
+  $scope.submitHandler = function(meal) {
+    Meals.addOne($scope.meal).then(function () {
+      $location.path('/');
+    });
+  };
 
 })
