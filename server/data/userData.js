@@ -1,4 +1,4 @@
-//this file populates our database with test data/
+/*populates database with user data*/
 
 var Ian = {
   username: 'KINGKONG',
@@ -11,7 +11,7 @@ var Ian = {
 };
 
 var Suya = {
-	username: 'Penguin Power',
+  username: 'Penguin Power',
   firstName: 'Suya',
   lastName: 'Xu',
   password: '123',
@@ -21,7 +21,7 @@ var Suya = {
 };
 
 var Richard = {
-	username: 'Sparkles',
+  username: 'Sparkles',
   firstName: 'Richard',
   lastName: 'Castro',
   password: '432',
@@ -41,5 +41,6 @@ var Hahnbi = {
 };
 
 var userData = [Ian, Suya, Richard, Hahnbi];
-//export our testData
+
+//export our userData
 module.exports = userData;

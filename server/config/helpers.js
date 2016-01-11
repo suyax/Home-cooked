@@ -1,3 +1,5 @@
+/*helper functions for err handling and decode token*/
+
 var jwt = require('jwt-simple');
 
 module.exports = {
@@ -8,7 +10,7 @@ module.exports = {
   },
   errorHandler: function (error, req, res, next) {
     // send error message to client
-    // message for gracefull error handling on app
+    // message for graceful error handling on app
     res.send(500, {error: error.message});
   },
 

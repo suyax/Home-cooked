@@ -1,12 +1,18 @@
+/*control user singin and singup
+handle data between database and user model*/
+
+//require dependencies
 var User = require('./userModel.js');
 var Q = require('q');
 var jwt = require('jwt-simple');
 
+//make findUser and createUser promise functions
 var findUser = Q.nbind(User.findOne, User);
 var createUser = Q.nbind(User.create, User);
 
+//export module signin and signup
 module.exports = {
-
+  // sign in function to authenticate user
   signin: function (req, res, next) {
     var username = req.body.username;
     var password = req.body.password;
@@ -32,9 +38,17 @@ module.exports = {
       });
   },
 
+  // register user into data base
   signup: function (req, res, next) {
      var username = req.body.username;
+     var firstName = req.body.firstName;
+     var lastName = req.body.lastName;
      var password = req.body.password;
+     var address = req.body.address;
+     var phone = req.body.phone;
+     var email = req.body.email;
+
+
     // check to see if user already exists
     findUser({username: username})
       .then(function (user) {
@@ -44,7 +58,12 @@ module.exports = {
           // make a new user if not one
           return createUser({
             username: username,
-            password: password
+            firstName = firstName,
+            lastName = lastName,
+            password: password,
+            address: address,
+            phone: phone,
+            email: email
           });
         }
       })
