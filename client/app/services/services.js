@@ -26,6 +26,7 @@ angular.module('homecooked.services', [])
   var isAuth = function () {
     return !!$window.localStorage.getItem('home.cooked');
     // return true;
+
   };
 
   var signout = function () {
