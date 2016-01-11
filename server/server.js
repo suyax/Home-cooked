@@ -17,6 +17,7 @@ var db = process.env.MONGOLAB_URI||process.env.MONGOHQ_URL || 'mongodb://locahos
 // connect to mongo database named "dinnerrev"
 mongoose.connect(db);
 
+
 // configure server with all the middleware and routes
 require('./config/middleware.js')(app, express);
 require('./config/routes.js')(app, express);
