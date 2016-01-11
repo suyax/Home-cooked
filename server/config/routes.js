@@ -12,6 +12,7 @@ module.exports = function (app, express) {
   app.post('/api/users/signup', userController.signup);
 
   //for meals
+  app.post('/api/meals/meal', mealController.deleteMeal);
   app.get('/api/meals', mealController.allMeals);
   app.post('/api/meals', mealController.newMeal);
 

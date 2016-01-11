@@ -49,6 +49,17 @@ module.exports = {
     .fail(function(error){
       next(error);
     });
-  }
+  },
+  //delete a meal by id
+  deleteMeal: function (req, res) {
+    var id = req.body.id;
+    Meal.remove({ _id: req.body.id }, function(err) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send('deleted');
+      }
+      });
+    }
 };
 
